@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="utf-8">
+        <title> Kaden'Plush </title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header> <!--Entête de la page, logo, menu navigation...-->>
+            <a href="/" class="pied_de_page">Index
+                <img src="Image/Le raichu content.jpg" alt="Logo" title="Raichu Logo" height="50"/>
+            </a>
+        </header>
+
+        <main>
+            <section>
+                <p class="Presentation">Heyo ! Bienvenue sur mon site ! Ici tu trouveras mon portfolio artistique !</p>
+                <!--Ptit commentaire pour me rappeler que tu es capable 06/02/2024 -->
+                <p>
+                    La vie vaut la peine d'être vécu. <em class="important">Rien que pour tes beaux yeux.</em>
+                </p>
+                <div class="Contact"> 
+                    <a href="add">Commissionnnez !
+                    <img src="Image/Raichu écrit.jpg" height="10"/>
+                    </a> 
+                    <h1>Portfolio</h1>
+                    <ul>
+                    {% if items%}
+                        {% for i in items %}
+                            <li>{{ i.name_text }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li> No item listed </li>
+                    {% endif %}
+                    </ul>
+                    <h2> Current Commissions </h2>
+                    <ul>
+                    {% if commissions %}
+                        {% for c in commissions %}
+                            <li>{{ c.itemname_text }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li> No active commission </li>
+                    {% endif %}
+                    </ul>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <nav>
+                <div>
+                    <p>
+                        <img src="Image/20230709_213923.jpg" alt="Peluche !" title="Bulbasaur Plush" height="200"/>
+                    </p>
+                    <a href="/" class="pied_de_page">Index
+                        <img src="Image/Le raichu content.jpg" alt="Logo" title="Logo" height="50"/>
+                    </a>
+                </div>
+            </nav>
+        </footer>
+    </body>
+
+
+</html>

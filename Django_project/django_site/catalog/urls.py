@@ -10,4 +10,6 @@ urlpatterns = [
     path("<int:item_id>/price/", views.price, name="price"),
     # ex: /catalog/1/stock/
     path("<int:stock_id>/stock/", views.stock_check, name="stock"),
+    
+    path("add/", views.commission_create, name = 'commission-create')
 ]
