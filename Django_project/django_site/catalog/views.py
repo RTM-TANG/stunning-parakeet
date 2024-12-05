@@ -17,6 +17,9 @@ def stock_check(request, item_id):
         # A ameliorer en affichage de tous les détails du stock
     return HttpResponse("You're looking on stock %s." % item_id)
 
+def info_commission(request, commission_id):
+    context = Commission.objects.get(id=commission_id)
+    return render (request, "commission_detail.html", {"commission_object" : context})
 # créer une page pour détailler les infos d'une commission
 
 def commission_create(request):

@@ -55,7 +55,7 @@ class Commission (models.Model):
     itemname_text = models.CharField('Name of Commission', max_length=50)
     description_text = models.CharField('Description', max_length=300, default='')
     features_text = models.CharField('Specific Features', max_length=200, default='')
-    deadline_date = models.DateTimeField("Deadline (format YYYY-MM-DD)")
+    deadline_date = models.DateTimeField("Deadline (format d/m/Y)")
     budget_float = models.FloatField('Budget' ,default=50)
     username_text = models.CharField('Name' , max_length=50)
     email_text = models.CharField('Email', max_length=50)

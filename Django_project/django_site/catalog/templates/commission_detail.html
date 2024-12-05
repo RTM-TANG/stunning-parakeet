@@ -1,0 +1,18 @@
+{% extends 'catalog_base.html' %}
+
+{% block content %}
+
+ <h1>Details de la Commission</h1>
+
+<tr>
+    <td> Nom : {{ commission_object.itemname_text }} </td> <br>
+    <td> Description : {{ commission_object.description_text }} </td> <br>
+    <td> Aspects : {{ commission_object.features_text }} </td> <br>
+    <td> Date de rendu : {{ commission_object.deadline_date }} </td> <br>
+    <td> Offre monétaire : {{ commission_object.budget_float }} </td> <br>
+    <td> Nom du demandeur : {{ commission_object.itemname_text }} </td> <br>
+    <td> Email : {{ commission_object.email_text }} </td> <br>
+    <td> Contact : {{ commission_object.contact_text }} </td> <br>
+</tr>
+
+{% endblock %}

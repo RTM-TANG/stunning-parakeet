@@ -1,7 +1,10 @@
 from django.test import TestCase
 from django.urls import reverse
 from .models import Item, Commission, Stock
-from datetime import timedelta, date
+from datetime import timedelta, date, datetime
+from django.utils import timezone
+from .forms import CommissionForm
+
 # Create your tests here.
 
 def create_Item(name, description, publication, duration, price):
@@ -41,6 +44,30 @@ def create_Commission(itemname, description, features, deadline, budget, usernam
                                contact_text=contact
                                )
     
+class CatalogFormsTest(TestCase):
+    def test_ErrorCommissionForm(self):
+        """
+        If the data inside the form is wrong, an error will generate
+        """
+        form_data = {'error': 80085}
+        form = CommissionForm(data=form_data)
+        self.assertFalse(form.is_valid())
+    
+    def test_CommissionForm(self):
+        """
+        If the data ot the right typings, the form is validated
+        """
+        form_data = {'itemname_text': 'Plush-name', 
+                     "description_text": 'description', 
+                     "features_text": 'feats', 
+                     "deadline_date": timezone.now(), 
+                     "budget_float": 50, 
+                     "username_text": 'Jojo', 
+                     "email_text": 'Bizarre', 
+                     "contact_text": 'Adventure'}
+        form = CommissionForm(data=form_data)
+        self.assertTrue(form.is_valid())
+        
     
 class CatalogIndexViewTest(TestCase) :
     def test_noItems_noCommission(self):
@@ -56,7 +83,7 @@ class CatalogIndexViewTest(TestCase) :
         """
         If no commissions exist, an appropriate image is displayed
         """
-        item = create_Item("exemple_of_item", "description uwu", "2024-06-09", timedelta(2), 50)
+        item = create_Item("exemple_of_item", "description uwu", timezone.now(), timedelta(2), 50)
         response = self.client.get(reverse("index"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'No active commission')
@@ -66,7 +93,7 @@ class CatalogIndexViewTest(TestCase) :
         """
         If no items exist, an appropriate image is displayed
         """
-        commission = create_Commission("exemple_of_commission", 'description exemple', 'no features', date(2025, 11, 6), 50, 'TestRobot', 'NoEmail', 'Django')
+        commission = create_Commission("exemple_of_commission", 'description exemple', 'no features', timezone.now() + timedelta(50), 50, 'TestRobot', 'NoEmail', 'Django')
         response = self.client.get(reverse("index"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'No item listed')
@@ -76,18 +103,34 @@ class CatalogIndexViewTest(TestCase) :
         """
         If items and commissions exist, their names are displayed in the view
         """
-        item = create_Item("exemple_of_item", "description uwu", "2024-06-09", timedelta(2), 50)
-        item2 = create_Item("Theory of Beauty", "good song", "2024-12-09", timedelta(5), 50)
+        item = create_Item("exemple_of_item", "description uwu", timezone.datetime(2026,12,13), timedelta(2), 50)
+        item2 = create_Item("Theory of Beauty", "good song", timezone.datetime(2024,12,9), timedelta(5), 50)
         commission = create_Commission("exemple_of_commission", 'description exemple', 'no features', date(2025, 11, 6), 50, 'TestRobot', 'NoEmail', 'Django')
         response = self.client.get(reverse("index"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'exemple_of_item')
         self.assertContains(response, 'Theory of Beauty')
         self.assertContains(response, 'exemple_of_commission')
-        
-        
 
+class CatalogCommissionCreateViewTest(TestCase):
+    def test_noforms(self):
+        """Checks if we get the page if we go into the url
+        """
+        response = self.client.get(reverse("commission-create"))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Budget')
         
+    # def test_postforms (self):
+    #     response = self.client.post(reverse("commission-create"), {'itemname_text' : 'something'})
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertFormError(response, CommissionForm, 'itemname_text', 'This field is required.')
     
-        
-        
+class CatalogCommissionDetailViewTest(TestCase):
+    def test_response(self):
+        """If a Commission Id is passed, it will display its content
+        """
+        test_Commission= create_Commission("exemple_of_commission", 'description exemple', 'no features', date(2025, 11, 6), 50, 'TestRobot', 'NoEmail', 'Django')
+        response = self.client.get(reverse("commission-detail", args=(test_Commission.id,)))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Details de la Commission")
+        self.assertContains(response, "NoEmail")
