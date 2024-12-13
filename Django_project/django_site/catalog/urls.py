@@ -1,3 +1,5 @@
+""" Lists all urls path in the django application """
+
 from django.urls import path
 
 from . import views

@@ -47,7 +47,11 @@
                     <ul>
                     {% if commissions %}
                         {% for c in commissions %}
-                            <li>{{ c.itemname_text }}</li>
+                            <li>
+                                <a href="{% url 'commission-detail' commission_id=c.id %}"> 
+                                    {{ c.itemname_text }}
+                                </a>
+                            </li>
                         {% endfor %}
                     {% else %}
                         <li> No active commission </li>
@@ -70,6 +74,5 @@
             </nav>
         </footer>
     </body>
-
 
 </html>

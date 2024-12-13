@@ -1,11 +1,11 @@
+""" Tests of the application catalog """
+
 from django.test import TestCase
 from django.urls import reverse
 from .models import Item, Commission, Stock
 from datetime import timedelta, date, datetime
 from django.utils import timezone
 from .forms import CommissionForm
-
-# Create your tests here.
 
 def create_Item(name, description, publication, duration, price):
     """
@@ -134,3 +134,16 @@ class CatalogCommissionDetailViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Details de la Commission")
         self.assertContains(response, "NoEmail")
+        
+class CatalogItemDetailViewTest(TestCase):
+    def test_response(self):
+        """If an Item Id is passed, it will display the content of associated item
+        """
+        test_item = create_Item("Theory of Beauty", "good song", timezone.datetime(2024,12,9), timedelta(5), 50)
+        response = self.client.get(reverse("commission-detail", args=(test_item.id,)))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Details du catalogue")
+        self.assertContains(response, "Nom : Theory of Beauty")
+        self.assertContains(response, "Description : good song")
+        self.assertContains(response, "Date de publication : 2024-12-09")
+        self.assertContains(response, "Temps de fabrication : 5")

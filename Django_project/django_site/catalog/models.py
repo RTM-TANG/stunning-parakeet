@@ -1,6 +1,6 @@
-from django.db import models
+""" Model architecture and definition """
 
-# Create your models here.
+from django.db import models
 
 class Item(models.Model):
     """Class representing an item in the catalog
