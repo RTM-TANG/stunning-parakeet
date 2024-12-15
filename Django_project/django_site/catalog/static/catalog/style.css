@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+  }
+
+h1 {
+    color:#A5B4FC;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.5em;
+}
+
+h2, p {
+    color:#F9F8FF,
+
+}
+
+p {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1em;
+}
+
+.Presentation {
+    color: #663399;
+    font-size: 20px;
+    border-bottom: 50px, black, solid;
+    border-right: 10px, #8e86b5, solid;
+    padding: 200px;
+    background-color: antiquewhite
+}
+  
+.Presentation h2 {
+    margin-top: 30px;
+}
+  
+.Presentation ul {
+    margin-top: 30px;
+}
+
+.important {
+    color: #a5b4fc;
+}
+
+div{
+    color:#242424;
+    font-family: "Manrope", sans-serif, none;
+    font-size: 1em;
+    background-color: white;
+}
+
+.Contact{
+    border-spacing: 100px;
+    margin: auto;
+}
+
+body{
+    background-color: #1F2039;
+    background-image: url("image/IMG-20230730-WA0000.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    font-family: "Manrope", sans-serif;
+}
+
+header,
+footer {
+    padding-top: 50px;
+    padding-bottom: 0px;
+    padding-right: 50px;
+    padding-left: 50px;
+  background-color: white;
+
+}
+
+section{
+    padding: 80px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.pied_de_page:hover{ 
+    opacity: 0.9;
+}
+
+.cta:hover{
+    text-decoration-color: linear-gradient(90deg, #696484, #8788BA);
+}
+
+.About-Me-main{
+    width: 50%;
+    margin : auto;
+}

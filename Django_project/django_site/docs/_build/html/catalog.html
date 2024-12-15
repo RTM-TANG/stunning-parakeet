@@ -83,6 +83,7 @@
 </section>
 <section id="module-catalog.admin">
 <span id="catalog-admin-module"></span><h2>catalog.admin module<a class="headerlink" href="#module-catalog.admin" title="Link to this heading">¶</a></h2>
+<p>Admin settings and permissions</p>
 </section>
 <section id="module-catalog.apps">
 <span id="catalog-apps-module"></span><h2>catalog.apps module<a class="headerlink" href="#module-catalog.apps" title="Link to this heading">¶</a></h2>
@@ -90,6 +91,11 @@
 <dt class="sig sig-object py" id="catalog.apps.CatalogConfig">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">catalog.apps.</span></span><span class="sig-name descname"><span class="pre">CatalogConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.apps.CatalogConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<p>Configuration options for the application are set in this class</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>AppConfig (AppConfig): Represent a Django app and its configuration</p>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="catalog.apps.CatalogConfig.default_auto_field">
 <span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#catalog.apps.CatalogConfig.default_auto_field" title="Link to this definition">¶</a></dt>
@@ -105,10 +111,12 @@
 </section>
 <section id="module-catalog.forms">
 <span id="catalog-forms-module"></span><h2>catalog.forms module<a class="headerlink" href="#module-catalog.forms" title="Link to this heading">¶</a></h2>
+<p>Forms settings and initialization</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="catalog.forms.CommissionForm">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">catalog.forms.</span></span><span class="sig-name descname"><span class="pre">CommissionForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.forms.CommissionForm" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<p>Class to create a form based on the commission model object</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="catalog.forms.CommissionForm.Meta">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#catalog.forms.CommissionForm.Meta" title="Link to this definition">¶</a></dt>
@@ -147,6 +155,7 @@
 </section>
 <section id="module-catalog.models">
 <span id="catalog-models-module"></span><h2>catalog.models module<a class="headerlink" href="#module-catalog.models" title="Link to this heading">¶</a></h2>
+<p>Model architecture and definition</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="catalog.models.Commission">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">catalog.models.</span></span><span class="sig-name descname"><span class="pre">Commission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.models.Commission" title="Link to this definition">¶</a></dt>
@@ -441,6 +450,7 @@ object the first time, the query is executed.</p>
 </section>
 <section id="module-catalog.tests">
 <span id="catalog-tests-module"></span><h2>catalog.tests module<a class="headerlink" href="#module-catalog.tests" title="Link to this heading">¶</a></h2>
+<p>Tests of the application catalog</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="catalog.tests.CatalogCommissionCreateViewTest">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">catalog.tests.</span></span><span class="sig-name descname"><span class="pre">CatalogCommissionCreateViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.tests.CatalogCommissionCreateViewTest" title="Link to this definition">¶</a></dt>
@@ -513,21 +523,40 @@ object the first time, the query is executed.</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="catalog.tests.CatalogItemDetailViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">catalog.tests.</span></span><span class="sig-name descname"><span class="pre">CatalogItemDetailViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.tests.CatalogItemDetailViewTest" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="catalog.tests.CatalogItemDetailViewTest.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#catalog.tests.CatalogItemDetailViewTest.test_response" title="Link to this definition">¶</a></dt>
+<dd><p>If an Item Id is passed, it will display the content of associated item</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="catalog.tests.create_Commission">
 <span class="sig-prename descclassname"><span class="pre">catalog.tests.</span></span><span class="sig-name descname"><span class="pre">create_Commission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">itemname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deadline</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.tests.create_Commission" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a Commission object</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>itemname (string): name of the item
-description (string):  Description and characteristics of the item
-features (string): Features wanted on the commissioned item
-deadline (datetime.datetime): Last date to finish the commission
-budget (float): Money
-username (string): Name of the client
-email (string): Mail of the client
-contact (string): Other ways to contact the client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>itemname</strong> (<em>string</em>) – Name of the item</p></li>
+<li><p><strong>description</strong> (<em>string</em>) – Description and characteristics of the commission</p></li>
+<li><p><strong>features</strong> (<em>string</em>) – Features wanted on the commissioned item</p></li>
+<li><p><strong>deadline</strong> (<em>datetime.datetime</em>) – Last date to finish the commission</p></li>
+<li><p><strong>budget</strong> (<em>float</em>) – Price in € that the customer is ready pay</p></li>
+<li><p><strong>username</strong> (<em>string</em>) – Name of the client</p></li>
+<li><p><strong>email</strong> (<em>string</em>) – Mail of the client</p></li>
+<li><p><strong>contact</strong> (<em>string</em>) – Alternative ways to contact the client</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Commission: Class that represents a command for a plush</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns an object of the Commission Class</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#catalog.models.Commission" title="catalog.models.Commission">Commission</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -536,33 +565,104 @@ contact (string): Other ways to contact the client</p>
 <dt class="sig sig-object py" id="catalog.tests.create_Item">
 <span class="sig-prename descclassname"><span class="pre">catalog.tests.</span></span><span class="sig-name descname"><span class="pre">create_Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publication</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.tests.create_Item" title="Link to this definition">¶</a></dt>
 <dd><p>Creates and Return an Item object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – Name of the item</p></li>
+<li><p><strong>description</strong> (<em>string</em>) – Description and characteristics of the item</p></li>
+<li><p><strong>publication</strong> (<em>datetime.datetime</em>) – Date of publication of the item</p></li>
+<li><p><strong>duration</strong> (<em>timedelta</em>) – Time estimated to produce one item</p></li>
+<li><p><strong>Price</strong> (<em>float</em>) – Price in € that the customer is ready pay</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns an object of the Item Class</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#catalog.models.Item" title="catalog.models.Item">Item</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
 <section id="module-catalog.urls">
 <span id="catalog-urls-module"></span><h2>catalog.urls module<a class="headerlink" href="#module-catalog.urls" title="Link to this heading">¶</a></h2>
+<p>Lists all urls path in the django application</p>
 </section>
 <section id="module-catalog.views">
 <span id="catalog-views-module"></span><h2>catalog.views module<a class="headerlink" href="#module-catalog.views" title="Link to this heading">¶</a></h2>
+<p>This file contains all views</p>
+<p>All functions returns a http response to the navigator.
+Links python and html files</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="catalog.views.commission_create">
 <span class="sig-prename descclassname"><span class="pre">catalog.views.</span></span><span class="sig-name descname"><span class="pre">commission_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.views.commission_create" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Displays a form page to complete
+On completion, adds the commission object to the database
+and redirects to the index</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – Request made by a user via url</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the template “commission_create.html” on get and “index.html” on post</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="catalog.views.detail">
 <span class="sig-prename descclassname"><span class="pre">catalog.views.</span></span><span class="sig-name descname"><span class="pre">detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.views.detail" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Displays information on a chosen item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – Request made by a user via url</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the template “item_detail.html” with item information</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="catalog.views.index">
 <span class="sig-prename descclassname"><span class="pre">catalog.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.views.index" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Default page of the app.
+Args:</p>
+<blockquote>
+<div><p>request (HttpRequest): The demand of the user by url</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>HttpResponse: renders the template “index.html” with information from the database.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="catalog.views.info_commission">
 <span class="sig-prename descclassname"><span class="pre">catalog.views.</span></span><span class="sig-name descname"><span class="pre">info_commission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commission_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.views.info_commission" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Displays information on a chosen commission</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>HttpRequest</em>) – Request made by a user via url</p></li>
+<li><p><strong>commission_id</strong> (<em>Int</em>) – Id number of of the commission</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the template “commission_detail.html” with item information</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="catalog.views.stock_check">

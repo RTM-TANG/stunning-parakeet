@@ -6,9 +6,14 @@
 django_site documentation
 =========================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+django_site is a small scale project based on my will to open a plush store.
+In developping journey, I am trying and testing a lot of frameworks.
+
+This project's objective is to display a small website that will allow
+the user to check a catlog of products and current orders, called commissions.
+The user is able to create and add new commissions to the database.
+
+The project is under the GNU 3.O public licence.
 
 
 .. toctree::

@@ -1,0 +1,39 @@
+body{
+    background: linear-gradient(90deg, #8360c3, #2ebf91);
+    font-family: "Manrope", sans-serif;
+}
+h1 {
+    color:#A5B4FC;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.5em;
+}
+h2, p {
+    color:#F9F8FF,
+
+}
+p {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1em;
+}
+.Presentation {
+    color: #663399;
+    font-size: 12px;
+}
+.important {
+    color: #a5b4fc;
+}
+div{
+    color:#242424;
+    font-family: "Manrope", sans-serif, none;
+    font-size: 1em;
+    background-color: white;
+}
+.pied_de_page:hover{ 
+    opacity: 0.5;
+}
+.cta:hover{
+    text-decoration-color: linear-gradient(90deg, #696484, #8788BA);
+}
+a:hover{
+    text-decoration: underline;
+}

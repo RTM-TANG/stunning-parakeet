@@ -10,6 +10,19 @@ from .forms import CommissionForm
 def create_Item(name, description, publication, duration, price):
     """
     Creates and Return an Item object
+    
+    :param name: Name of the item
+    :type name: string
+    :param description: Description and characteristics of the item
+    :type description: string
+    :param publication: Date of publication of the item
+    :type publication: datetime.datetime
+    :param duration: Time estimated to produce one item
+    :type duration: timedelta  
+    :param Price: Price in € that the customer is ready pay
+    :type Price: float
+    :return: Returns an object of the Item Class
+    :rtype: Item
     """
     return Item.objects.create(name_text=name, 
                                description_text=description,
@@ -19,20 +32,28 @@ def create_Item(name, description, publication, duration, price):
                                )
     
 def create_Commission(itemname, description, features, deadline, budget, username, email, contact):
-    """Creates a Commission object
+    """
+    Creates a Commission object
 
-    Args:
-        itemname (string): name of the item
-        description (string):  Description and characteristics of the item
-        features (string): Features wanted on the commissioned item
-        deadline (datetime.datetime): Last date to finish the commission
-        budget (float): Money
-        username (string): Name of the client
-        email (string): Mail of the client
-        contact (string): Other ways to contact the client
-
-    Returns:
-        Commission: Class that represents a command for a plush 
+    :param itemname: Name of the item
+    :type itemname: string
+    :param description: Description and characteristics of the commission
+    :type description: string
+    :param features: Features wanted on the commissioned item
+    :type features: string
+    :param deadline: Last date to finish the commission
+    :type deadline: datetime.datetime
+    :param budget: Price in € that the customer is ready pay
+    :type budget: float
+    :param username: Name of the client
+    :type username: string
+    :param email: Mail of the client
+    :type email: string
+    :param contact: Alternative ways to contact the client
+    :type contact: string
+    :return: Returns an object of the Commission Class
+    :rtype: Commission
+    
     """
     return Commission.objects.create(itemname_text=itemname, 
                                description_text=description,
