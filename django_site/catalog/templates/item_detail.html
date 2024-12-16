@@ -1,0 +1,17 @@
+{% extends 'catalog_base.html' %}
+
+{% block content %}
+
+ <h1>Details du catalogue</h1>
+
+<tr>
+    <td> Nom : {{ item_object.name_text }} </td> <br>
+    <td> Description : {{ item_object.description_text }} </td> <br>
+    <td> Date de publication : {{ item_object.pub_date }} </td> <br>
+    <td> Temps de fabrication : {{ item_object.work_duration }} </td> <br>
+    <td> Liste matériel : {{ item_object.material_list }} </td> <br>
+    <td> Image : {{ item_object.picture_img }} </td> <br>
+    <td> Prix : {{ item_object.price }} </td> <br>
+</tr>
+
+{% endblock %}
