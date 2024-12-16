@@ -20,6 +20,12 @@ Sphinx == 8.1.3
 django-docs == 0.3.3
 
 ----------------------------------------------------------------------
+Documentation
+
+Available as html in the docs folder
+
+----------------------------------------------------------------------
+
 Authors and Acknowledgements
 
 TANG Rémi (RTM-TANG) : Someone who likes to code
